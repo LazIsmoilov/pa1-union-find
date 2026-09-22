@@ -10,12 +10,17 @@ public:
     }
 
     int find(int x) {
-        // TODO: walk to root, no compression, no rank logic
-        return -1;
+    while (parent[x] != x) {
+        x = parent[x];
+    }
+    return x;
     }
 
     void unite(int x, int y) {
-        // TODO: attach one root under the other, no rank comparison
+    int rootX = find(x);
+    int rootY = find(y);
+    if (rootX == rootY) return;   // already in the same set
+    parent[rootX] = rootY;        // no rank logic — just attach one root under the other
     }
 
 private:
