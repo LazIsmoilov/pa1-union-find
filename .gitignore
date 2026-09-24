@@ -70,3 +70,4 @@ Testing/
 test_naive
 test_union_find
 test_kruskal
+benchmark
